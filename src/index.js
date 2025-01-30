@@ -19,9 +19,11 @@ function updateTime() {
   );
 }
 
-
 function updatePlace(event) {
   let placeTimezone = event.target.value;
+  if (placeTimezone === "current") {
+    placeTimezone = moment.tz.guess();
+  }
   let placeName = placeTimezone.replace("_", "").split("/")[1];
   let placeTime = moment().tz(placeTimezone);
   let citiesElement = document.querySelector("#cities");
@@ -30,11 +32,12 @@ function updatePlace(event) {
           <h2>${placeName}</h2>
           <div class="date">${placeTime.format("MMMM Do YYYY")}</div>
           <div class="time">${placeTime.format(
-            "h:mm:ss")} <small>${placeTime.format("A")}</small></div>
+            "h:mm:ss"
+          )} <small>${placeTime.format("A")}</small></div>
         </div> `;
-        }
+}
 
- updateTime();
+updateTime();
 setInterval(updateTime, 1000);
 
 let citiesSelectElement = document.querySelector("#place");
