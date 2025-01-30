@@ -34,7 +34,9 @@ function updatePlace(event) {
           <div class="time">${placeTime.format(
             "h:mm:ss"
           )} <small>${placeTime.format("A")}</small></div>
-        </div> `;
+        </div>
+         <a href="/"> All cities </a>
+         `;
 }
 
 updateTime();
