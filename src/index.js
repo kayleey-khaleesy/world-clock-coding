@@ -35,7 +35,7 @@ function updatePlace(event) {
             "h:mm:ss"
           )} <small>${placeTime.format("A")}</small></div>
         </div>
-         <a href="/"> All cities </a>
+  <a href="/"> All cities </a>
          `;
 }
 
